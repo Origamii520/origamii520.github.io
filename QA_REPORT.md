@@ -24,6 +24,6 @@ No separate MiniCPM adaptation repository was found in the searched desktop appl
 
 Source videos were sampled every 30 seconds to establish mapping and identify risk. Tracking includes an identifiable person; real-robot recordings show laboratory interiors, local browser/service endpoints and voices. These are flagged for owner review, not declared cleared. No resume, certificate, phone number field, ID number, address or original video is copied into the website. The supplied contact email is deliberately included.
 
-Publication and remote Actions execution remain unverified until owner approval and authentication.
+Public deployment verified on 2026-10-29: Actions run 40888592499 completed successfully; homepage and all four video endpoints returned HTTP 200. The full browser acceptance suite also passed against https://origamii520.github.io/ with no page errors.
 
 Owner explicitly approved the public file list and media permissions on 2026-10-29. npm ci passed after stopping Windows processes holding esbuild.exe. Lighthouse tooling upgraded to 13.6.0 to resolve development-tool dependency advisories; full npm audit now reports zero vulnerabilities. Original reported Lighthouse scores refer to the recorded version-12 run.

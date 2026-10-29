@@ -12,7 +12,7 @@ page.on("request", (r) => {
   if (r.url().includes("/videos/")) videos.push(r.url());
 });
 await fs.mkdir(".local/qa", { recursive: true });
-await page.goto("http://127.0.0.1:4173");
+await page.goto(process.argv[2] || "http://127.0.0.1:4173");
 await page.waitForLoadState("networkidle");
 if (videos.length) throw Error("Videos loaded without click");
 const layouts = [];

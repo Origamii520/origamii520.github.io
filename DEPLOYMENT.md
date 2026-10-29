@@ -1,20 +1,42 @@
 # GitHub Pages deployment
 
-Status: LOCAL BUILD READY; not published. GitHub CLI 2.103.3 was installed with winget. gh auth status reports no authenticated hosts. Anonymous API inspection was rate-limited; unauthenticated git ls-remote returned Repository not found. This does not establish absence of a private repository. Recheck after authentication before creating anything.
+LIVE — verified 2026-10-29 (Asia/Shanghai).
 
-## Before publishing
+- Website: https://origamii520.github.io/
+- Repository: https://github.com/Origamii520/origamii520.github.io
+- Initial successful deployment: https://github.com/Origamii520/origamii520.github.io/actions/runs/40888592499
+- GitHub account verified: Origamii520, ID 214653863.
+- Owner explicitly approved the public file list and media permissions before repository creation/push.
+- Authenticated lookup confirmed no existing same-name repository before creation. No existing project was overwritten.
+- Pages source: GitHub Actions (build_type=workflow). Vite base: /.
+- Homepage and all four video endpoints returned HTTP 200; video MIME type video/mp4. Full browser acceptance suite passed against the public URL.
 
-1. Owner reviews PUBLISH_REVIEW.md and the local preview, including people, laboratory interiors, screens and recorded voices. Approval must precede public repository creation or push.
-2. In PowerShell, run: & 'C:/Program Files/GitHub CLI/gh.exe' auth login --hostname github.com --web --git-protocol https
-3. Run gh auth status and gh api user --jq .login. Require Origamii520.
-4. Run gh repo view Origamii520/origamii520.github.io --json nameWithOwner,isPrivate,defaultBranchRef,url. If it exists, inspect its tree and branch before integrating; never force push. If absent, after approval use gh repo create Origamii520/origamii520.github.io --public --source . --remote origin (without automatic push).
-5. Review git status, git diff --cached and file sizes. Do not force-add ignored files. Commit approved source and derivatives. git push -u origin main.
-6. In repository Settings > Pages, set Build and deployment > Source to GitHub Actions. The included workflow builds using npm ci, lint and TypeScript/Vite build, uploads dist, and deploys with pages:write and id-token:write permissions. If the first run precedes Pages setup, rerun it.
-7. Inspect gh run list and gh run view --log-failed as needed. Verify successful deploy and HTTP 200 at the target homepage, all four video paths, and both language/theme modes. Only then report the public portfolio as live.
+## Update
 
-Target hostname (NOT yet verified live): origamii520.github.io
-Vite base is /. No custom domain, paid hosting, Git LFS or external video service is required.
+Edit src/data for content, src/components or src/sections for presentation, and src/styles for design. Stop running Vite servers before npm ci on Windows to avoid executable locks.
 
-## Updates
+npm ci
+npm run lint
+npm run build
+npm run preview -- --port 4173
+node scripts/verify.mjs
 
-Edit data/components, regenerate reviewed media only if needed, then npm run lint and npm run build. Commit and push main; Actions redeploys automatically. Keep package-lock.json tracked. For existing deployments, preserve repository history and review changes before pushing. GitHub Pages is public; local preview and ignored review documents are not access controls for files that are pushed.
+git add .
+git diff --cached --check
+git diff --cached --stat
+git commit -m "Update portfolio"
+git push origin main
+
+Each push to main runs npm ci, lint and TypeScript/Vite build; the workflow uploads dist and deploys it with pages:write and id-token:write. Inspect GitHub Actions for the exact pushed commit. After success, run:
+
+node scripts/verify.mjs https://origamii520.github.io/
+
+## Authentication on another machine
+
+Install GitHub CLI, then gh auth login --hostname github.com --web --git-protocol https. Verify gh api user --jq .login returns Origamii520. Use gh auth setup-git when necessary. Never store access tokens in this project.
+
+## Media and privacy
+
+Do not commit original videos, resumes or certificates. VIDEO_INVENTORY.md, PUBLISH_REVIEW.md and .local are intentionally ignored. The current 90-second video derivatives and real-frame posters were approved by the owner. Review privacy and copyright again for new/replacement media. Do not force-add ignored files or force-push repository history.
+
+No paid hosting, custom domain, Git LFS, external video platform, database or backend is required. Keep package-lock.json tracked.
