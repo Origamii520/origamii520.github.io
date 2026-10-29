@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.local/
+.env*
+*.log
+*.tsbuildinfo
+VIDEO_INVENTORY.md
+PUBLISH_REVIEW.md

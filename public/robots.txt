@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://origamii520.github.io/sitemap.xml
