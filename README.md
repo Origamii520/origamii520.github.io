@@ -6,6 +6,8 @@ React + TypeScript + Vite, bilingual Chinese/English, dark/light themes, respons
 
 Requires Node.js 22 and npm. Run npm ci, then npm run dev. Production: npm run build and npm run preview. Stop development/preview processes before npm ci on Windows to avoid locking esbuild.exe.
 
+Theme defaults use the visitor’s local time: light from 08:00 (inclusive) to 20:00 (exclusive), dark for the other 12 hours. Manual switching applies to the current visit; reopening or reloading resets to the time-based default. Keep the initialization in index.html and timeTheme in src/App.tsx aligned. Verify boundaries with node scripts/verify-personalization.mjs.
+
 ## Maintain
 
 - src/data/profile.ts: biography, education, skills, honors and contact

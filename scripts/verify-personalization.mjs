@@ -8,10 +8,11 @@ const errors = [];
 page.on("pageerror", (e) => errors.push(e.message));
 await fs.mkdir(".local/qa", { recursive: true });
 for (const [hour, minute, expected] of [
-  [6, 59, "dark"],
-  [7, 0, "light"],
-  [18, 59, "light"],
-  [19, 0, "dark"],
+  [7, 59, "dark"],
+  [8, 0, "light"],
+  [19, 59, "light"],
+  [20, 0, "dark"],
+  [0, 0, "dark"],
 ]) {
   await page.clock.setFixedTime(new Date(2026, 9, 30, hour, minute));
   await page.goto(url);

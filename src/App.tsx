@@ -23,7 +23,7 @@ function read(key: string, fallback: string) {
 }
 function timeTheme() {
   const hour = new Date().getHours();
-  return hour >= 7 && hour < 19 ? "light" : "dark";
+  return hour >= 8 && hour < 20 ? "light" : "dark";
 }
 export default function App() {
   const [lang, setLang] = useState<Lang>(
