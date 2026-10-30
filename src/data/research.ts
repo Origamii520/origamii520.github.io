@@ -43,8 +43,8 @@ export const research = [
     ),
     role: c("项目负责人", "Project lead"),
     text: c(
-      "负责ESP终端与SPI刷新、Node.js/Web管理和华为云IoTDA接入。获全国大学生物联网设计竞赛全国总决赛二等奖，项目形成两项电子纸系统相关软件著作权，著作权人为东北大学。",
-      "Led ESP device integration, SPI display updates, Node.js/Web management and Huawei Cloud IoTDA connectivity. The project received second prize in the national IoT design competition finals and two e-paper software copyright registrations held by Northeastern University.",
+      "负责ESP终端与SPI刷新、Node.js/Web管理和华为云IoTDA接入。获全国大学生物联网设计竞赛全国总决赛二等奖，项目形成两项电子纸系统相关软件著作权。",
+      "Led ESP device integration, SPI display updates, Node.js/Web management and Huawei Cloud IoTDA connectivity. The project received second prize in the national IoT design competition finals and two e-paper software copyright registrations.",
     ),
     tags: ["ESP", "SPI", "Node.js", "IoTDA"],
   },
