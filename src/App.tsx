@@ -3,6 +3,7 @@ import { profile, skills, experience, honors } from "./data/profile";
 import { research } from "./data/research";
 import type { Lang } from "./data/projects";
 import { Projects } from "./sections/Projects";
+import { HeroShowcase } from "./components/HeroShowcase";
 const nav = [
   "Home",
   "About",
@@ -199,59 +200,7 @@ export default function App() {
               </a>
             </div>
           </div>
-          <div
-            className="system-art"
-            aria-label={
-              z
-                ? "机器人系统架构示意"
-                : "Illustrative robotics system architecture"
-            }
-          >
-            <div className="art-heading">
-              <span>ROBOT SYSTEM / 01</span>
-              <span className="dot" />
-            </div>
-            <div className="orbit o1" />
-            <div className="orbit o2" />
-            <svg
-              viewBox="0 0 440 330"
-              role="img"
-              aria-label={
-                z
-                  ? "原创四足机器人线稿"
-                  : "Original quadruped robot line illustration"
-              }
-            >
-              <g fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M102 137 206 86 329 120 225 177Z M102 137v43l124 43 103-57v-46 M225 177v46 M119 181l-14 57 36 40 M148 191l-11 47 20 25 M293 184l20 45-13 60 M319 169l34 40-9 62 M178 113l51 15 43-21 M196 157l-41-15 M269 145l34-17" />
-                <path
-                  d="m91 286 133 38 143-64 M40 245 174 284 390 180"
-                  opacity=".2"
-                />
-                <circle cx="305" cy="145" r="7" />
-                <circle cx="105" cy="238" r="5" />
-                <circle cx="313" cy="229" r="5" />
-              </g>
-            </svg>
-            <div className="system-layer">
-              <span>01</span>
-              <strong>PERCEPTION</strong>
-              <small>Camera / LiDAR / IMU</small>
-            </div>
-            <div className="system-layer">
-              <span>02</span>
-              <strong>ORCHESTRATION</strong>
-              <small>Robonix / ROS 2 / AI Runtime</small>
-            </div>
-            <div className="system-layer">
-              <span>03</span>
-              <strong>EXECUTION</strong>
-              <small>Planning / Control / Hardware</small>
-            </div>
-            <p className="art-foot">
-              SENSE → REASON → ACT <span>↗</span>
-            </p>
-          </div>
+          <HeroShowcase lang={lang} />
           <div className="hero-bottom">
             <span>
               {z
