@@ -5,12 +5,12 @@ export const research = [
     title: "FRAME",
     full: "Criticality-Aware RoI Batch Scheduling for Real-Time Embedded GPU Perception",
     status: c(
-      "修改完善中 · 曾投EMSOFT 2026",
-      "Under revision · previously submitted to EMSOFT 2026",
+      "已投稿 · EMSOFT 2026",
+      "Submitted · EMSOFT 2026",
     ),
     role: c(
-      "学生第三作者 · 核心参与成员",
-      "Third student author · core research contributor",
+      "核心参与成员",
+      "Core research contributor",
     ),
     text: c(
       "参与在线RoI批处理调度框架与Resizing策略设计，协调动态RoI尺寸、任务关键度与硬实时截止时间。在所报告的高负载实验配置下，截止时间错失率最高降低65%。",

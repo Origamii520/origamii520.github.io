@@ -204,8 +204,8 @@ export default function App() {
           <div className="hero-bottom">
             <span>
               {z
-                ? "东北大学 · 物联网工程"
-                : "Northeastern University · IoT Engineering"}
+                ? "东北大学 · 计算机科学与工程学院 · 物联网工程"
+                : "Northeastern University · School of Computer Science and Engineering · IoT Engineering"}
             </span>
             <span>
               {z
