@@ -363,25 +363,29 @@ export default function App() {
                 <time>{e.date}</time>
                 <div>
                   <h3 className="experience-title">
-                    {e.logo && (
-                      <a
-                        className="school-seal"
-                        href={e.links?.[0]?.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={
-                          z ? "北京大学官网" : "Peking University website"
-                        }
-                      >
-                        <img
-                          src={e.logo}
-                          alt={z ? "北京大学校徽" : "Peking University seal"}
-                          width="52"
-                          height="52"
-                          loading="lazy"
-                        />
-                      </a>
-                    )}
+                    <span className="institution-logos">
+                      {e.logos.map((logo) => (
+                        <a
+                          key={logo.url}
+                          className={
+                            "school-seal" + (logo.wide ? " brand-wordmark" : "")
+                          }
+                          href={logo.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={logo.label[lang]}
+                          title={logo.label[lang]}
+                        >
+                          <img
+                            src={logo.src}
+                            alt={logo.label[lang]}
+                            width={logo.wide ? 140 : 52}
+                            height="52"
+                            loading="lazy"
+                          />
+                        </a>
+                      ))}
+                    </span>
                     {e.links?.length === 1 ? (
                       <a
                         className="institution-link"
@@ -395,6 +399,9 @@ export default function App() {
                       e.title[lang]
                     )}
                   </h3>
+                  {e.logoNote && (
+                    <p className="institution-note">{e.logoNote[lang]}</p>
+                  )}
                   <p>{e.text[lang]}</p>
                   {e.links && e.links.length > 1 && (
                     <div className="community-links">

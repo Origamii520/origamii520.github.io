@@ -35,6 +35,14 @@ export const skills = [
 export const experience = [
   {
     date: "2023.09 — 2027.06",
+    logos: [
+      {
+        src: "/images/neu-logo.png",
+        label: c("东北大学官网", "Northeastern University website"),
+        url: "https://www.neu.edu.cn/",
+        wide: false,
+      },
+    ],
     links: [
       { label: "Northeastern University", url: "https://www.neu.edu.cn/" },
     ],
@@ -46,7 +54,14 @@ export const experience = [
   },
   {
     date: "2027.09 · Expected",
-    logo: "/images/pku-logo.png",
+    logos: [
+      {
+        src: "/images/pku-logo.png",
+        label: c("北京大学官网", "Peking University website"),
+        url: "https://www.pku.edu.cn/",
+        wide: false,
+      },
+    ],
     links: [{ label: "Peking University", url: "https://www.pku.edu.cn/" }],
     title: c("北京大学", "Peking University"),
     text: c(
@@ -56,6 +71,20 @@ export const experience = [
   },
   {
     date: "2026.07 — Present",
+    logos: [
+      {
+        src: "/images/syswonder-logo.png",
+        label: c("Syswonder 开源社区官网", "Syswonder community website"),
+        url: "https://syswonder.org/",
+        wide: false,
+      },
+      {
+        src: "/images/robonix-logo.svg",
+        label: c("Robonix 官网", "Robonix website"),
+        url: "https://robonix.ai/",
+        wide: true,
+      },
+    ],
     links: [
       { label: "Syswonder", url: "https://syswonder.org/" },
       { label: "GitHub Community", url: "https://github.com/syswonder" },
@@ -72,6 +101,27 @@ export const experience = [
   },
   {
     date: "2024.03 — Present",
+    logos: [
+      {
+        src: "/images/neu-logo.png",
+        label: c(
+          "依托单位：东北大学 · 查看官方机构名录",
+          "Host institution: Northeastern University · Research directory",
+        ),
+        url: "https://www.neu.edu.cn/kxyj/yjjg.htm",
+        wide: false,
+      },
+    ],
+    logoNote: c(
+      "依托单位：东北大学",
+      "Host institution: Northeastern University",
+    ),
+    links: [
+      {
+        label: "NEU Research Directory",
+        url: "https://www.neu.edu.cn/kxyj/yjjg.htm",
+      },
+    ],
     title: c(
       "辽宁省嵌入式系统重点实验室",
       "Liaoning Provincial Key Laboratory of Embedded Systems",

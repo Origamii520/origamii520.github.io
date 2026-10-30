@@ -35,7 +35,12 @@ for (const [hour, theme] of [
   await page.locator(".portrait-link img").evaluate((i) => i.decode());
   await page.screenshot({ path: ".local/qa/personal-" + theme + ".png" });
   await page.locator("#experience").scrollIntoViewIfNeeded();
-  await page.locator(".school-seal img").evaluate((i) => i.decode());
+  assert.equal(await page.locator(".school-seal img").count(),5);
+  for (const logo of await page.locator(".school-seal img").all()) {
+    await logo.scrollIntoViewIfNeeded();
+    await logo.evaluate((i) => i.decode());
+    assert.ok(await logo.evaluate((i) => i.naturalWidth > 0));
+  }
   await page.waitForTimeout(750);
   await page
     .locator("#experience")
@@ -45,6 +50,13 @@ await page.setViewportSize({ width: 390, height: 844 });
 await page.goto(url);
 await page.locator(".portrait-link img").evaluate((i) => i.decode());
 await page.screenshot({ path: ".local/qa/personal-mobile.png" });
+await page.locator('#experience').scrollIntoViewIfNeeded();
+for (const logo of await page.locator('.school-seal img').all()) {
+  await logo.scrollIntoViewIfNeeded();
+  await logo.evaluate(i => i.decode());
+}
+await page.waitForTimeout(750);
+await page.locator('#experience').screenshot({path:'.local/qa/logos-mobile.png'});
 assert.equal(
   await page.evaluate(() => document.documentElement.scrollWidth > innerWidth),
   false,

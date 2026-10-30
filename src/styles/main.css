@@ -1164,3 +1164,39 @@ summary {
     gap: 12px;
   }
 }
+.institution-logos {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex: none;
+}
+.experience-title {
+  flex-wrap: wrap;
+}
+.school-seal.brand-wordmark {
+  width: 160px;
+  border-radius: 18px;
+  padding: 12px;
+}
+.timeline .institution-note {
+  margin: 12px 0 0;
+  font-size: 11px;
+  color: var(--muted);
+}
+.school-seal:active {
+  transform: scale(0.96);
+}
+@media (max-width: 600px) {
+  .school-seal.brand-wordmark {
+    width: 144px;
+    border-radius: 15px;
+    padding: 10px;
+  }
+  .experience-title {
+    gap: 14px;
+  }
+  .experience-title .institution-logos:has(.brand-wordmark) {
+    flex-basis: 100%;
+  }
+}
+.school-seal:not(.brand-wordmark) img { border-radius:50%; }
