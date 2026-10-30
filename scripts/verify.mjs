@@ -2,6 +2,7 @@ import { chromium } from "playwright";
 import fs from "node:fs/promises";
 const browser = await chromium.launch({ channel: "chrome", headless: true });
 const page = await browser.newPage({ reducedMotion: "reduce" });
+await page.clock.setFixedTime(new Date(2026, 9, 30, 21, 0));
 const errors = [];
 const videos = [];
 page.on("pageerror", (e) => errors.push(e.message));
@@ -75,8 +76,8 @@ await page.getByRole("link", { name: "Contact", exact: true }).click();
 if (await page.locator("header nav").isVisible())
   throw Error("Mobile menu did not close");
 await page.reload();
-if ((await page.locator("html").getAttribute("data-theme")) !== "light")
-  throw Error("Persistence");
+if ((await page.locator("html").getAttribute("data-theme")) !== "dark")
+  throw Error("Reload must reset theme to local time");
 await fs.writeFile(
   ".local/qa/results.json",
   JSON.stringify(

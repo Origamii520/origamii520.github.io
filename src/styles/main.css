@@ -963,4 +963,204 @@ footer > a {
   }
 }
 
-.toolbar button,.toolbar a{min-width:32px;min-height:40px;display:inline-flex;align-items:center;justify-content:center}.toolbar .menu-button{display:none}@media(max-width:900px){.toolbar .menu-button{display:inline-flex}}
+.toolbar button,
+.toolbar a {
+  min-width: 32px;
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.toolbar .menu-button {
+  display: none;
+}
+@media (max-width: 900px) {
+  .toolbar .menu-button {
+    display: inline-flex;
+  }
+}
+/* Quiet portrait treatment and responsive institution links. */
+.identity-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 0 0 28px;
+}
+.portrait-link {
+  flex: none;
+  width: 76px;
+  height: 96px;
+  display: block;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #eef0f2;
+  border: 1px solid rgba(160, 180, 200, 0.3);
+  box-shadow: 0 8px 24px #00000015;
+  transition:
+    transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1),
+    box-shadow 0.3s;
+}
+.portrait-link img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+}
+.identity-card .identity {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+.identity-caption {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.experience-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.school-seal {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 64px;
+  height: 64px;
+  padding: 6px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 12px #0000000d;
+  border: 1px solid #d5dfe8;
+  transition: transform 0.25s;
+}
+.school-seal img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.institution-link {
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 6px;
+  transition:
+    color 0.2s,
+    text-decoration-color 0.2s;
+}
+.institution-link span {
+  font-size: 14px;
+  color: var(--muted);
+  display: inline-block;
+  transition: transform 0.25s;
+}
+.community-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+.community-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 42px;
+  padding: 8px 14px;
+  border-radius: 12px;
+  font-size: 12px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  transition:
+    transform 0.25s,
+    border-color 0.25s,
+    background-color 0.25s;
+}
+@media (hover: hover) and (pointer: fine) {
+  .portrait-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px #00000025;
+  }
+  .school-seal:hover {
+    transform: scale(1.04);
+  }
+  .institution-link:hover {
+    color: var(--accent);
+    text-decoration-color: var(--accent);
+  }
+  .institution-link:hover span {
+    transform: translate(2px, -2px);
+  }
+  .community-links a:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+  }
+}
+.button:active,
+.toolbar button:active,
+.community-links a:active,
+.portrait-link:active {
+  transform: scale(0.97);
+}
+a,
+button,
+summary {
+  touch-action: manipulation;
+}
+.toolbar button {
+  border-radius: 10px;
+  transition:
+    background-color 0.2s,
+    transform 0.2s;
+}
+.toolbar button:hover {
+  background: var(--surface);
+}
+@media (prefers-reduced-motion: no-preference) {
+  html,
+  header,
+  .project,
+  .research-card,
+  .system-art,
+  .community-links a {
+    transition:
+      background-color 0.24s ease,
+      color 0.24s ease,
+      border-color 0.24s ease;
+  }
+  .project {
+    transition:
+      background-color 0.24s ease,
+      border-color 0.24s ease,
+      transform 0.25s ease;
+  }
+}
+@media (max-width: 600px) {
+  .identity-card {
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+  .portrait-link {
+    width: 66px;
+    height: 84px;
+    border-radius: 17px;
+  }
+  .identity-card .identity {
+    font-size: 17px;
+  }
+  .identity-card .identity span {
+    font-size: 11px;
+    margin-left: 4px;
+  }
+  .identity-caption {
+    font-size: 10px;
+  }
+  .school-seal {
+    width: 52px;
+    height: 52px;
+    padding: 5px;
+  }
+  .experience-title {
+    gap: 12px;
+  }
+}

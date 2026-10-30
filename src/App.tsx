@@ -20,28 +20,42 @@ function read(key: string, fallback: string) {
     return fallback;
   }
 }
+function timeTheme() {
+  const hour = new Date().getHours();
+  return hour >= 7 && hour < 19 ? "light" : "dark";
+}
 export default function App() {
   const [lang, setLang] = useState<Lang>(
     read("lang", "zh") === "en" ? "en" : "zh",
   );
-  const [theme, setTheme] = useState(
-    read("theme", "dark") === "light" ? "light" : "dark",
-  );
+  const [theme, setTheme] = useState(timeTheme);
   const [menu, setMenu] = useState(false);
   const z = lang === "zh";
   useEffect(() => {
     document.documentElement.lang = z ? "zh-CN" : "en";
     document.documentElement.dataset.theme = theme;
+    document.documentElement.style.colorScheme = theme;
+    document.documentElement.style.backgroundColor =
+      theme === "light" ? "#f4f7fa" : "#0b1120";
+    document
+      .querySelector('meta[name="theme-color"]')
+      ?.setAttribute("content", theme === "light" ? "#f4f7fa" : "#0b1120");
     document.title = z
       ? "张修齐 · Robotics & Systems"
       : "Xiuqi Zhang · Robotics & Systems";
     try {
       localStorage.setItem("lang", lang);
-      localStorage.setItem("theme", theme);
     } catch {
       /* Storage may be disabled. */
     }
   }, [lang, theme, z]);
+  useEffect(() => {
+    const onPageShow = (event: PageTransitionEvent) => {
+      if (event.persisted) setTheme(timeTheme());
+    };
+    window.addEventListener("pageshow", onPageShow);
+    return () => window.removeEventListener("pageshow", onPageShow);
+  }, []);
   useEffect(() => {
     if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const observer = new IntersectionObserver(
@@ -96,6 +110,11 @@ export default function App() {
           <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             aria-label={z ? "切换明暗主题" : "Toggle color theme"}
+            title={
+              z
+                ? "打开页面时按当地时间选择主题；点击可手动切换"
+                : "Starts with your local time; click to switch manually"
+            }
           >
             {theme === "dark" ? "☼" : "◐"}
           </button>
@@ -123,10 +142,33 @@ export default function App() {
             <p className="eyebrow">
               <span className="dot" /> ROBOTICS / SYSTEMS / EMBEDDED AI
             </p>
-            <p className="identity">
-              {z ? "张修齐" : "Xiuqi Zhang"}{" "}
-              <span>/ {z ? "Xiuqi Zhang" : "张修齐"}</span>
-            </p>
+            <div className="identity-card">
+              <a
+                className="portrait-link"
+                href="#about"
+                aria-label={z ? "了解张修齐" : "About Xiuqi Zhang"}
+              >
+                <img
+                  src="/images/xiuqi-portrait.webp"
+                  alt={z ? "张修齐个人照片" : "Portrait of Xiuqi Zhang"}
+                  width="360"
+                  height="545"
+                  fetchPriority="high"
+                  decoding="async"
+                />
+              </a>
+              <div>
+                <p className="identity">
+                  {z ? "张修齐" : "Xiuqi Zhang"}{" "}
+                  <span>/ {z ? "Xiuqi Zhang" : "张修齐"}</span>
+                </p>
+                <p className="identity-caption">
+                  {z
+                    ? "机器人系统软件 · 嵌入式 AI"
+                    : "Robotics systems · Embedded AI"}
+                </p>
+              </div>
+            </div>
             <h1>
               Building Reliable
               <br />
@@ -320,8 +362,54 @@ export default function App() {
               <article key={e.title.en}>
                 <time>{e.date}</time>
                 <div>
-                  <h3>{e.title[lang]}</h3>
+                  <h3 className="experience-title">
+                    {e.logo && (
+                      <a
+                        className="school-seal"
+                        href={e.links?.[0]?.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={
+                          z ? "北京大学官网" : "Peking University website"
+                        }
+                      >
+                        <img
+                          src={e.logo}
+                          alt={z ? "北京大学校徽" : "Peking University seal"}
+                          width="52"
+                          height="52"
+                          loading="lazy"
+                        />
+                      </a>
+                    )}
+                    {e.links?.length === 1 ? (
+                      <a
+                        className="institution-link"
+                        href={e.links[0].url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {e.title[lang]} <span aria-hidden="true">↗</span>
+                      </a>
+                    ) : (
+                      e.title[lang]
+                    )}
+                  </h3>
                   <p>{e.text[lang]}</p>
+                  {e.links && e.links.length > 1 && (
+                    <div className="community-links">
+                      {e.links.map((link) => (
+                        <a
+                          key={link.url}
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {link.label} <span aria-hidden="true">↗</span>
+                        </a>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </article>
             ))}

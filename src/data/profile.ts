@@ -35,6 +35,9 @@ export const skills = [
 export const experience = [
   {
     date: "2023.09 — 2027.06",
+    links: [
+      { label: "Northeastern University", url: "https://www.neu.edu.cn/" },
+    ],
     title: c("东北大学", "Northeastern University"),
     text: c(
       "计算机科学与工程学院 · 物联网工程本科（预计毕业）",
@@ -43,6 +46,8 @@ export const experience = [
   },
   {
     date: "2027.09 · Expected",
+    logo: "/images/pku-logo.png",
+    links: [{ label: "Peking University", url: "https://www.pku.edu.cn/" }],
     title: c("北京大学", "Peking University"),
     text: c(
       "软件与微电子学院 · 电子信息专业，硕士推免拟录取，预计2027年9月入学",
@@ -51,6 +56,11 @@ export const experience = [
   },
   {
     date: "2026.07 — Present",
+    links: [
+      { label: "Syswonder", url: "https://syswonder.org/" },
+      { label: "GitHub Community", url: "https://github.com/syswonder" },
+      { label: "Robonix", url: "https://robonix.ai/" },
+    ],
     title: c(
       "Syswonder / Robonix 开源社区",
       "Syswonder / Robonix Open Source Community",

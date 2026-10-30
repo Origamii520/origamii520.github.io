@@ -4,6 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="theme-color" content="#0B1120" />
+    <script>
+      const hour = new Date().getHours();
+      const theme = hour >= 7 && hour < 19 ? "light" : "dark";
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.style.colorScheme = theme;
+      document.documentElement.style.backgroundColor =
+        theme === "light" ? "#f4f7fa" : "#0b1120";
+    </script>
     <title>张修齐 Xiuqi Zhang · Robotics & Systems</title>
     <meta
       name="description"

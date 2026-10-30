@@ -27,3 +27,9 @@ Source videos were sampled every 30 seconds to establish mapping and identify ri
 Public deployment verified on 2026-10-29: Actions run 40888592499 completed successfully; homepage and all four video endpoints returned HTTP 200. The full browser acceptance suite also passed against https://origamii520.github.io/ with no page errors.
 
 Owner explicitly approved the public file list and media permissions on 2026-10-29. npm ci passed after stopping Windows processes holding esbuild.exe. Lighthouse tooling upgraded to 13.6.0 to resolve development-tool dependency advisories; full npm audit now reports zero vulnerabilities. Original reported Lighthouse scores refer to the recorded version-12 run.
+
+## 2026-10-30 personalization update
+
+Owner supplied and authorized the portrait for website use. Optimized portrait: 21,504 bytes; official PKU seal: 25,869 bytes. Source attribution is recorded in public/images/ATTRIBUTION.md. University and community URLs returned HTTP 200. The document initializes its theme before React loads using the visitor device's local hour: light from 07:00 inclusive to 19:00 exclusive, otherwise dark. Manual selection applies to the current page visit; reload and restored page visits reselect based on time. No polling timers or new runtime dependencies.
+
+Validated local-time boundaries 06:59 / 07:00 / 18:59 / 19:00, manual toggle and reload reset, both themes, portrait/logo decoding, external links, reduced-motion behavior, five viewport widths and four video playback checks. Build, TypeScript and ESLint passed. The original photo and videos are unchanged.
