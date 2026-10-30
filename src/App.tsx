@@ -209,8 +209,8 @@ export default function App() {
             </span>
             <span>
               {z
-                ? "北京大学硕士推免拟录取 · 预计2027年9月入学"
-                : "PKU master’s provisional admission · Expected September 2027"}
+                ? "北京大学硕士推免拟录取 · 2027年9月入学"
+                : "PKU master’s provisional admission · Entry: September 2027"}
             </span>
             <a href="#about">SCROLL TO EXPLORE ↓</a>
           </div>

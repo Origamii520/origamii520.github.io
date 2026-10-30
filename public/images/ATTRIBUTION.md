@@ -1,7 +1,7 @@
 # Image sources
 
 - xiuqi-portrait.webp: supplied and authorized for the portfolio by Xiuqi Zhang on 2026-10-30. Resized and encoded as WebP for delivery; original photograph unchanged.
-- pku-logo.png: official Peking University seal, downloaded from https://www.pku.edu.cn/pku_logo_red.png on 2026-10-30. Used to identify the linked education entry; rights remain with Peking University. Education status remains provisional admission, expected September 2027 entry.
+- pku-logo.png: official Peking University seal, downloaded from https://www.pku.edu.cn/pku_logo_red.png on 2026-10-30. Used to identify the linked education entry; rights remain with Peking University. Education status remains provisional admission, September 2027 entry.
 - Project WebP covers: actual frames from the corresponding owner-supplied demonstration videos.
 
 - neu-logo.png: official NEU seal from https://www.neu.edu.cn/__local/4/30/EA/0509D19C69223A9F496920EB50A_B834D310_1019D.png, linked on https://www.neu.edu.cn/xygk/ddbs.htm (retrieved 2026-10-30).

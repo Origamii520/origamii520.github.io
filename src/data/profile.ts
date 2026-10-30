@@ -9,8 +9,8 @@ export const profile = {
   ),
   about: [
     c(
-      "我是东北大学计算机科学与工程学院物联网工程本科生，曾获本科生国家奖学金（获奖比例约前1%）。已接受北京大学软件与微电子学院电子信息专业硕士推免拟录取通知，预计2027年9月入学。",
-      "I am an undergraduate in Internet of Things Engineering at Northeastern University’s School of Computer Science and Engineering, and a National Scholarship recipient (approximately the top 1%). I have accepted a provisional offer of admission through recommendation to the master’s program in Electronic Information at Peking University’s School of Software and Microelectronics, with entry expected in September 2027.",
+      "我是东北大学计算机科学与工程学院物联网工程本科生，曾获本科生国家奖学金（获奖比例约前1%）。已接受北京大学软件与微电子学院电子信息专业硕士推免拟录取通知，2027年9月入学。",
+      "I am an undergraduate in Internet of Things Engineering at Northeastern University’s School of Computer Science and Engineering, and a National Scholarship recipient (approximately the top 1%). I have accepted a provisional offer of admission through recommendation to the master’s program in Electronic Information at Peking University’s School of Software and Microelectronics, with entry in September 2027.",
     ),
     c(
       "我的兴趣从操作系统延伸至AI Runtime与机器人中间件：在FRAME研究中探索实时GPU调度，以第一作者撰写Embedded AIOS英文综述；作为Syswonder / Robonix开源开发者，参与Unitree Go2的真实机器人适配。",
@@ -48,8 +48,8 @@ export const experience = [
     ],
     title: c("东北大学", "Northeastern University"),
     text: c(
-      "计算机科学与工程学院 · 物联网工程本科（预计毕业）",
-      "School of Computer Science and Engineering · B.Eng. in Internet of Things Engineering (expected)",
+      "计算机科学与工程学院 · 物联网工程本科（2027年6月毕业）",
+      "School of Computer Science and Engineering · B.Eng. in Internet of Things Engineering · Graduation: June 2027",
     ),
   },
   {
@@ -115,7 +115,7 @@ export const experience = [
     ),
   },
   {
-    date: "2027.09 · Expected",
+    date: "2027.09",
     logos: [
       {
         src: "/images/pku-logo.png",
@@ -127,8 +127,8 @@ export const experience = [
     links: [{ label: "Peking University", url: "https://www.pku.edu.cn/" }],
     title: c("北京大学", "Peking University"),
     text: c(
-      "软件与微电子学院 · 电子信息专业，硕士推免拟录取，预计2027年9月入学",
-      "School of Software and Microelectronics · provisional admission through recommendation to the master’s program in Electronic Information; expected entry in September 2027",
+      "软件与微电子学院 · 电子信息专业，硕士推免拟录取，2027年9月入学",
+      "School of Software and Microelectronics · provisional admission through recommendation to the master’s program in Electronic Information; entry in September 2027",
     ),
   },
 ];
