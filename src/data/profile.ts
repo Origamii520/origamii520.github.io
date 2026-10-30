@@ -53,20 +53,35 @@ export const experience = [
     ),
   },
   {
-    date: "2027.09 · Expected",
+    date: "2024.03 — Present",
     logos: [
       {
-        src: "/images/pku-logo.png",
-        label: c("北京大学官网", "Peking University website"),
-        url: "https://www.pku.edu.cn/",
+        src: "/images/neu-logo.png",
+        label: c(
+          "依托单位：东北大学 · 查看官方机构名录",
+          "Host institution: Northeastern University · Research directory",
+        ),
+        url: "https://www.neu.edu.cn/kxyj/yjjg.htm",
         wide: false,
       },
     ],
-    links: [{ label: "Peking University", url: "https://www.pku.edu.cn/" }],
-    title: c("北京大学", "Peking University"),
+    logoNote: c(
+      "依托单位：东北大学",
+      "Host institution: Northeastern University",
+    ),
+    links: [
+      {
+        label: "NEU Research Directory",
+        url: "https://www.neu.edu.cn/kxyj/yjjg.htm",
+      },
+    ],
+    title: c(
+      "辽宁省嵌入式系统重点实验室",
+      "Liaoning Provincial Key Laboratory of Embedded Systems",
+    ),
     text: c(
-      "软件与微电子学院 · 电子信息专业，硕士推免拟录取，预计2027年9月入学",
-      "School of Software and Microelectronics · provisional admission through recommendation to the master’s program in Electronic Information; expected entry in September 2027",
+      "GPU实时调度与嵌入式AI系统架构研究",
+      "Real-time GPU scheduling and embedded AI system architecture research",
     ),
   },
   {
@@ -100,35 +115,20 @@ export const experience = [
     ),
   },
   {
-    date: "2024.03 — Present",
+    date: "2027.09 · Expected",
     logos: [
       {
-        src: "/images/neu-logo.png",
-        label: c(
-          "依托单位：东北大学 · 查看官方机构名录",
-          "Host institution: Northeastern University · Research directory",
-        ),
-        url: "https://www.neu.edu.cn/kxyj/yjjg.htm",
+        src: "/images/pku-logo.png",
+        label: c("北京大学官网", "Peking University website"),
+        url: "https://www.pku.edu.cn/",
         wide: false,
       },
     ],
-    logoNote: c(
-      "依托单位：东北大学",
-      "Host institution: Northeastern University",
-    ),
-    links: [
-      {
-        label: "NEU Research Directory",
-        url: "https://www.neu.edu.cn/kxyj/yjjg.htm",
-      },
-    ],
-    title: c(
-      "辽宁省嵌入式系统重点实验室",
-      "Liaoning Provincial Key Laboratory of Embedded Systems",
-    ),
+    links: [{ label: "Peking University", url: "https://www.pku.edu.cn/" }],
+    title: c("北京大学", "Peking University"),
     text: c(
-      "GPU实时调度与嵌入式AI系统架构研究",
-      "Real-time GPU scheduling and embedded AI system architecture research",
+      "软件与微电子学院 · 电子信息专业，硕士推免拟录取，预计2027年9月入学",
+      "School of Software and Microelectronics · provisional admission through recommendation to the master’s program in Electronic Information; expected entry in September 2027",
     ),
   },
 ];
